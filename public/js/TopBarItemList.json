@@ -1,0 +1,36 @@
+{
+  "leftLists": [
+    {
+      "itemName": "歌手",
+      "itemId": "001",
+      "router_path": "",
+      "router_name": "pageone"
+    },
+    {
+      "itemName": "唱片",
+      "itemId": "002",
+      "router_path": "",
+      "router_name": "pagetwo"
+    },
+    {
+      "itemName": "男歌手",
+      "itemId": "005",
+      "router_path": "",
+      "router_name": ""
+    }
+  ],
+  "rightLists": [
+    {
+      "itemName": "登录",
+      "itemId": "003",
+      "router_path": "",
+      "router_name": ""
+    },
+    {
+      "itemName": "注册",
+      "itemId": "004",
+      "router_path": "",
+      "router_name": ""
+    }
+  ]
+}
