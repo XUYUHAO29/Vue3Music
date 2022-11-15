@@ -1,3 +1,15 @@
+body::-webkit-scrollbar{
+  /* display: none; */
+  background-color: transparent;
+  width: 5px;
+}
+body::-webkit-scrollbar-thumb{
+  background-color: rgb(203, 89, 176);
+  border-radius: 25px;
+}
+body::-webkit-scrollbar-track-piece{
+  background-color:rgb(132 43 226 / 30%);
+}
 .height-max {
   height: 100%;
 }
@@ -6,6 +18,43 @@
 }
 .margin-center{
   margin: 0 auto;
+}
+.ml-10{
+  margin-left:10px
+}
+.mt-20{
+  margin-top:20px
+}
+.ml-20{
+  margin-left:20px
+}
+.mt-30{
+  margin-top:30px
+}
+.ml-30{
+  margin-left:30px
+}
+.mt-40{
+  margin-top:40px
+}
+
+.mlp-10{
+  margin-left:10%
+}
+.mtp-20{
+  margin-top:20%
+}
+.mlp-20{
+  margin-left:20%
+}
+.mtp-30{
+  margin-top:30%
+}
+.mlp-30{
+  margin-left:30%
+}
+.mtp-40{
+  margin-top:40%
 }
 .d-flex {
   display: flex;
@@ -144,4 +193,7 @@
 
 .overflow-auto {
   overflow: auto;
+}
+.none-display{
+  display: none;
 }

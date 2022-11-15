@@ -1,9 +1,14 @@
 import { debounce } from "./commom"
+let req
+function animation(){
 
-    window.onload = function(){
+}
+const an = new animation()
+window.onload = function(){
     const canvas = document.querySelector("#canvas")
     const ctx = canvas.getContext("2d")
     let round = []
+    // let req
     const pointNumber = 300
     const configure = (options) =>{
       const { width, height } = options || { width: window.innerWidth, height: window.innerHeight}
@@ -22,6 +27,8 @@ import { debounce } from "./commom"
       this.X = X
       this.Y = Y
       this.r = Math.random()*6 + 1;
+      this.speedX = Math.random()
+      this.speedY = Math.random()
       const alpha = (Math.floor(Math.random()*20) + 1) / 10 / 2
       const red =  (Math.floor(Math.random()*255) + 1)
       const green =  (Math.floor(Math.random()*255) + 1)
@@ -60,29 +67,36 @@ import { debounce } from "./commom"
 
     }
     Round_point.prototype.move = function(){
-      this.X += 0.1
-      this.Y += 0.5
-      if(this.X > (width + 100)){
-        this.X = -100
+      this.X += this.speedX
+      this.Y += this.speedY
+      if(this.X > (width + 10)){
+        this.X = -10
       }
-      if(this.Y > (height + 100)){
-        this.Y = -100
+      if(this.Y > (height + 10)){
+        this.Y = -10
       }
       round[this.index].draw()
     }
-    function animations(){
+    animation.prototype.animations = function(){
       ctx.clearRect(0, 0, width, height)
       for(let index = 0; index < pointNumber; index++){
         round[index].move()
       }
-      requestAnimationFrame(animations)
+     req = requestAnimationFrame(an.animations)
     }
     function init(){
       for(let index = 0;index < pointNumber;index++){
         round[index] = new Round_point(index, Math.random()*width, Math.random()*height)
         round[index].draw()
       }
-      animations()
+     
+     an.animations()
     }
     init()
+  }
+  export const stopAnimation=()=>{
+    window.cancelAnimationFrame(req)
+  }
+  export const continuAnimation=()=>{
+    an.animations()
   }

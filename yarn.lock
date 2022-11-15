@@ -8612,6 +8612,13 @@ vue-eslint-parser@^7.10.0:
     lodash "^4.17.21"
     semver "^6.3.0"
 
+vue-happy-bus@^2.0.1-vue3:
+  version "2.0.1-vue3"
+  resolved "https://registry.npmmirror.com/vue-happy-bus/-/vue-happy-bus-2.0.1-vue3.tgz#c41a3de6e5a3d6169c2441aea1ea12ecd420291f"
+  integrity sha512-0KFgCURISe5w4pwbQuixUXv6JOGrLDQhOPQaAuCx3Y5Tq6L5mPzsSy5Wu6GIg6wXohiTybD7xwMzS2iwCUs4Rw==
+  dependencies:
+    vue "^3.0.0"
+
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"

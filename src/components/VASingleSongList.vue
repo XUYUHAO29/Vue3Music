@@ -78,7 +78,7 @@ export default {
 .imageContent {
   height: 100%;
   width: 100%;
-  background-color: red;
+  /* background-color: red; */
   overflow: hidden;
   cursor: pointer;
 }

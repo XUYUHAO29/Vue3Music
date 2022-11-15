@@ -1,6 +1,10 @@
 <template>
   <defaultLayout>
-    <router-view></router-view>
+      <router-view v-slot = "{ Component }">
+        <Transition name="handoff">
+          <component :is="Component"/>
+        </Transition>
+      </router-view>
   </defaultLayout>
 </template>
 
@@ -12,6 +16,17 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style scoped>
+.handoff-enter-active {
+  transition: all 0.3s ease-out;
+}
 
+.handoff-leave-active {
+   transition: all 0.3s ease-out;
+}
+
+.handoff-enter-from,
+.handoff-leave-to {
+  opacity: 0;
+}
 </style>

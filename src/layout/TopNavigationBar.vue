@@ -66,7 +66,7 @@ export default defineComponent({
 #top-bar {
   width: 100vw;
   height: 63px;
-  background-color: rgb(197, 90, 18);
+  background-color: #623162f5;
   font-size: 1vw;
 }
 .leftItem,
@@ -79,12 +79,13 @@ export default defineComponent({
 .rightItem > div {
   cursor: pointer;
   /* border: 1px solid black; */
+  color: wheat;
   padding: 0 20px;
 }
 .leftItem > div:hover,
 .rightItem > div:hover {
   color:white;
-  background-color: aqua;
+  background-color: rgb(131, 57, 122);
 
 }
 .userHeader-imgs{
@@ -92,7 +93,7 @@ export default defineComponent({
   height: 30px;
   border-radius: 50%;
   margin-top:calc(50%);
-  background-color: red;
+  background-color: rgb(131, 57, 122);
 }
 </style>
 

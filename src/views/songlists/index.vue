@@ -18,7 +18,7 @@
                 :imageUrl="item.coverImgUrl"
                 :playlistDescription="item.name"
                 class="animate border"
-                @click="getDetail_toDetail(item.id)"
+                @click="getDetail_toDetail(item)"
             />           
         </va-grid-display>
     </div>
@@ -26,6 +26,7 @@
 <script>
 import { useSongLists } from "../../stores/songlists"
 import { onMounted, watch, reactive} from "vue"
+import { useRouter} from "vue-router"
 export default {
     name: "songlists",
     setup(){
@@ -41,8 +42,13 @@ export default {
                 console.log(arrlist.lists)
             }
         )
-        const getDetail_toDetail = (id) =>{
-            songList.getDetail_async({id:id})
+        const router = useRouter()
+        const getDetail_toDetail = (item) =>{
+            // 添加当前被选中的歌单
+            songList.addPlaylistHistory(item)
+            router.push({
+                path:"/songDetail"
+            })
         }
         return { 
             arrlist,

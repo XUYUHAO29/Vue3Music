@@ -7,3 +7,14 @@ export const debounce = (fn, delay) =>{
         timer = setTimeout(()=>fn(),delay)
     }
 }
+export const stom_time = (s) => {
+  if(s < 60){
+      return s + "s"
+  }
+  if(s % 60 == 0 ) {
+      return s / 60 + "m"
+  }
+  if(s > 60) {
+      return Math.floor(s / 60) + "m" + s % 60 + "s"
+  }
+}
