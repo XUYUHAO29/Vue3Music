@@ -81,6 +81,7 @@ export default defineComponent({
     }
     const playFn = () => {
       playIcon()
+      instance.refs.currentTarget.style.setProperty("left", "calc("+100+"% - 5px)")
     }
     function musicLoad(url){
       instance.refs.audio.setAttribute("src", url)
@@ -178,17 +179,18 @@ export default defineComponent({
 
     function currentTargetAnimation(){
       if(currentLength >= 100){
-        instance.refs.currentTarget.style.setProperty("left", "calc("+100+"% - 5px)")
         return
       }
       // let cur = 
       if(isProgressStop.value){
         return
       }
+      if(new Date().getTime() - time >= 300){
+        api.currentTime = instance.refs.audio.currentTime
+      }
       if(new Date().getTime() - time >= 1000) {
         currentLength += stepWidth
         instance.refs.currentTarget.style.setProperty("left", "calc("+currentLength+"% - 5px)")
-        api.currentTime = confirmeTime()
         time = new Date().getTime()
       }
       requestAnimationFrame(currentTargetAnimation)

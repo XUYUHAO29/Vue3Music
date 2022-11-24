@@ -75,9 +75,10 @@ export default defineComponent({
         position: absolute;
         left: 50%;
         top: 10%;
-        font-size: 30px;
-        width: 500px;
+        font-size: 25px;
+        width: 600px;
         height: 500px;
+        color:#fff;
         overflow-x: hidden;
         text-align: center;
     }
